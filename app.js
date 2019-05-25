@@ -2,10 +2,12 @@ let loseGuess= document.getElementById("lose-text")
 let guessAmount=document.getElementById("guess-text")
 let winGuess=document.getElementById("win-text")
 
-let randomNum=7
+let randomNum= Math.floor((Math.random()*10) +1)
+console.log(randomNum)
 let win = 0
 let lose = 0
 let loseAmount = 0
+let button = document.getElementById("button")
 
 let runEvent=() => {
 
@@ -16,16 +18,20 @@ let runEvent=() => {
     winGuess.innerHTML = win;
     lose = 0;
     guessAmount.innerHTML = 10-lose
+    button.className= "btn btn-outline-success"
   }
   else if (10 - lose == 1){
     loseAmount ++;
     loseGuess.innerHTML = loseAmount;
     guessAmount.innerHTML = 10
     lose = 0;
+    button.className = "btn btn-outline-primary"
   }
   else{
     lose ++;
     guessAmount.innerHTML = 10-lose;
+    button.className = "btn btn-outline-danger"
+    
   }
 }
 
