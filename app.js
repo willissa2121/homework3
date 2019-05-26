@@ -8,6 +8,8 @@ let win = 0
 let lose = 0
 let loseAmount = 0
 let button = document.getElementById("button")
+let input = document.getElementById("input")
+
 
 let runEvent=() => {
 
@@ -36,3 +38,10 @@ let runEvent=() => {
 }
 
 console.log(document.getElementById("input").value)
+
+input.addEventListener("keyup", function(event){
+  if (event.keyCode=== 13 || event.keyCode === 32){
+    runEvent()
+  }
+  
+})
