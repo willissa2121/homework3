@@ -16,6 +16,7 @@ let runEvent=() => {
   console.log(document.getElementById("input").value)
   let input = document.getElementById("input").value
   if (input == randomNum){
+    button.innerHTML="Correct!"
     win ++
     winGuess.innerHTML = win;
     lose = 0;
@@ -23,6 +24,7 @@ let runEvent=() => {
     button.className= "btn btn-outline-success"
   }
   else if (10 - lose == 1){
+    button.innerHTML="Wrong!"
     loseAmount ++;
     loseGuess.innerHTML = loseAmount;
     guessAmount.innerHTML = 10
@@ -30,6 +32,7 @@ let runEvent=() => {
     button.className = "btn btn-outline-primary"
   }
   else{
+    button.innerHTML="Wrong!"
     lose ++;
     guessAmount.innerHTML = 10-lose;
     button.className = "btn btn-outline-danger"
